@@ -787,22 +787,22 @@ PrefabInstance:
     - target: {fileID: 679349761034851352, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98233604
+      value: 0.9835937
       objectReference: {fileID: 0}
     - target: {fileID: 679349761034851352, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13758102
+      value: 0.13775717
       objectReference: {fileID: 0}
     - target: {fileID: 679349761034851352, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.12561014
+      value: 0.11534909
       objectReference: {fileID: 0}
     - target: {fileID: 679349761034851352, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.017592322
+      value: -0.016155211
       objectReference: {fileID: 0}
     - target: {fileID: 679349761331455562, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
@@ -867,62 +867,62 @@ PrefabInstance:
     - target: {fileID: 679349761581790126, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98233604
+      value: 0.9835937
       objectReference: {fileID: 0}
     - target: {fileID: 679349761581790126, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13758102
+      value: 0.13775717
       objectReference: {fileID: 0}
     - target: {fileID: 679349761581790126, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.12561014
+      value: 0.11534909
       objectReference: {fileID: 0}
     - target: {fileID: 679349761581790126, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.017592322
+      value: -0.016155211
       objectReference: {fileID: 0}
     - target: {fileID: 679349761858303603, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9823361
+      value: 0.98359376
       objectReference: {fileID: 0}
     - target: {fileID: 679349761858303603, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13758102
+      value: 0.13775717
       objectReference: {fileID: 0}
     - target: {fileID: 679349761858303603, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.12561016
+      value: 0.1153491
       objectReference: {fileID: 0}
     - target: {fileID: 679349761858303603, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.017592322
+      value: -0.016155211
       objectReference: {fileID: 0}
     - target: {fileID: 679349762208006116, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98766905
+      value: 0.98893356
       objectReference: {fileID: 0}
     - target: {fileID: 679349762208006116, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0917738
+      value: 0.09189129
       objectReference: {fileID: 0}
     - target: {fileID: 679349762208006116, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.12629206
+      value: 0.11597532
       objectReference: {fileID: 0}
     - target: {fileID: 679349762208006116, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.011735006
+      value: -0.010776377
       objectReference: {fileID: 0}
     - target: {fileID: 2976643859071343363, guid: b7883cdf2a1ffaa4db0e7eb0010c1964,
         type: 3}
@@ -1556,8 +1556,8 @@ Camera:
   m_GameObject: {fileID: 969182976}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1574,7 +1574,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -1,77 +1,82 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectManager : MonoBehaviour
 {
-    private ObjectFinder objectFinder;
-
     public ObjectDuplicator objectDuplicator;
+    public ObjectDestroyer objectDestroyer;
 
-    //private GameObject duplicatedObject;
+    private bool objectOnGround = false;
+    private GameObject duplicatedObject;
 
     void Start()
     {
-        objectFinder = GetComponent<ObjectFinder>();
+        objectDuplicator = GetComponent<ObjectDuplicator>();
+        objectDuplicator.OnObjectDuplicated += HandleObjectDuplicated;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            //ProcessNextObject();
-            RayCastForObject();
+            FindObject();
+            objectDuplicator.ResetHasBeenDuplicated();
         }
-
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             objectDuplicator.DuplicateObject();
-            //duplicatedObject = objectDuplicator.GetDuplicatedObject();
         }
-        if(Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.U))
         {
-            objectDuplicator.AddRigidbodyToDuplicatedObject();
+            objectDuplicator.AddRigidbody();
         }
-        if(Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             objectDuplicator.EnableGravity();
         }
-        /*if(Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            
-        }*/
+            if (objectOnGround && duplicatedObject != null)
+            {
+                objectDestroyer.DestroyObject(duplicatedObject);
+                duplicatedObject = null;
+                objectOnGround = false;
+            }
+        }
     }
 
-    /*private void ProcessNextObject()
+    private void FindObject()
     {
-        GameObject nextObject = objectFinder.GetNextObject();
-
-        if(nextObject != null)
+        GameObject foundObject = objectDuplicator.FindObjectWithTag("FindableObject");
+        if (foundObject != null)
         {
-            objectDuplicator.objectToDuplicate = nextObject;
-            Debug.Log($"Assigned object '{nextObject.name}' to objectToDuplicate");
+            duplicatedObject = null;
+            objectDuplicator.SetObjectToDuplicate(foundObject);
         }
-        else
-        {
-            Debug.Log($"No objects found with name containing '{objectFinder.objectNameContains}'");
-        }
-    }*/
-    private void RayCastForObject()
-    {
-        // Create a ray that points straight forward from the camera, in the Z direction
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-
-        RaycastHit hit;
-
-        // Raycast and check if it hits something (range of 100 units for example)
-        if (Physics.Raycast(ray, out hit, 10))
-        {
-            objectDuplicator.objectToDuplicate = hit.transform.gameObject;
-            Debug.Log($"Selected object {objectDuplicator.objectToDuplicate.name} for duplication");
-        }
-
-        // Draw a line to visualize the raycast
-        Debug.DrawLine(ray.origin, hit.point, Color.blue);
     }
 
+    private void HandleObjectDuplicated(GameObject duplicatedObject)
+    {
+        this.duplicatedObject = duplicatedObject;
+    }
+
+    public void SetObjectOnGround(bool isOnGround)
+    {
+        objectOnGround = isOnGround;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == objectDuplicator.GetDuplicatedObject())
+        {
+            objectOnGround = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == objectDuplicator.GetDuplicatedObject())
+        {
+            objectOnGround = false;
+        }
+    }
 }

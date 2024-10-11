@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class _PlayerController : MonoBehaviour
 {
-    InputManager inputManager;
+    InputMngr inputManager;
     Rigidbody playerRigidbody;
     Vector3 moveDirection;
     Transform cameraObject;
@@ -15,7 +15,7 @@ public class _PlayerController : MonoBehaviour
     private float rotationSpeed = 7f;
     private void Awake()
     {
-        inputManager = GetComponent<InputManager>();
+        inputManager = GetComponent<InputMngr>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
     }

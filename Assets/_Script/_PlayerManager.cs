@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class _PlayerManager : MonoBehaviour
 {
-    InputManager inputManager;
+    InputMngr inputManager;
     _PlayerController playerController;
     private void Awake()
     {
-        inputManager = GetComponent<InputManager>();
+        inputManager = GetComponent<InputMngr>();
         playerController = GetComponent<_PlayerController>();
     }
     private void LateUpdate()
